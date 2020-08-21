@@ -1,0 +1,28 @@
+btn.setOnClickListener(new View.OnClickListener(){  
+ @Override
+ public void onClick(View v){ 
+  int counter;        
+     counter =0;    
+   textView2.setText("1. Mention five features of Down's Syndrome");   
+final String pas[]={"Upward slant to eyes","Small ears that fold over at the top","Small ears","Small, flattened nose","Small flattened nose","Small mouth","Small mouth making tongue appears large","Short neck","Small hands","Small hands with short fingers","Excessive space between first and second toe"};
+
+  ///////
+  
+ for (int i = 0; i < pas.length; i++) {
+ final Pattern P = Pattern.compile(
+            Pattern.quote(pas[i]), Pattern.CASE_INSENSITIVE);
+  String mydata1=editText.getText().toString().trim();  
+ Matcher matcher = P.matcher(mydata1);
+if (matcher.find())
+{
+  counter++;
+  editText2.setTextColor(Color.BLUE); 
+}  
+ textView.setText("لقد احرزت: "+"First Page..."+counter); 
+textView.setTextColor(Color.BLUE); 
+   }
+
+///////
+
+}});
+//////
